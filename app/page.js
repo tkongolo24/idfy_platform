@@ -12,9 +12,9 @@ export default function Home() {
         </div>
 
         <div className="space-y-4">
-          <button className="w-full bg-gray-600 text-white py-3 rounded-lg hover:bg-gray-700 transition-all font-semibold">
+          <a href="/register" className="w-full bg-gray-600 text-white py-3 rounded-lg hover:bg-gray-700 transition-all font-semibold">
             Student Registration
-          </button>
+          </a>
           
           <button className="w-full bg-gray-600 text-white py-3 rounded-lg hover:bg-gray-700 transition-all font-semibold">
             Verify ID
