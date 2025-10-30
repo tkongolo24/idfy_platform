@@ -272,7 +272,7 @@ export default function Register() {
         <div className="space-y-3">
           <button 
             onClick={() => window.print()}
-            className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-all font-semibold"
+            className="w-full bg-gray-600 text-white py-3 rounded-lg hover:bg-gray-700 transition-all font-semibold"
           >
             🖨️ Print ID Card
           </button>
@@ -290,13 +290,13 @@ export default function Register() {
               })
               setPhotoPreview(null)
             }}
-            className="w-full bg-gray-200 text-gray-800 py-3 rounded-lg hover:bg-gray-300 transition-all font-semibold"
+            className="w-full bg-gray-600 text-white-800 py-3 rounded-lg hover:bg-gray-700 transition-all font-semibold"
           >
             ➕ Register Another Student
           </button>
 
           <a href="/"
-            className="block w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition-all font-semibold">
+            className="block w-full bg-gray-600 text-white py-3 rounded-lg hover:bg-gray-800 transition-all font-semibold">
             🏠 Back to Home
           </a>
         </div>
