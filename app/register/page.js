@@ -10,8 +10,26 @@ export default function Register() {
     studentId: '',
     email: '',
     contactNumber: '',
-    department: ''
+    department: '',
+    photo: null,
   })
+
+   // State 2: Photo preview 
+  const [photoPreview, setPhotoPreview] = useState(null)
+
+  const handlePhotoChange = (e) => {
+  const file = e.target.files[0]
+  if (file) {
+    setFormData(prev => ({ ...prev, photo: file }))
+    
+    // Create preview
+    const reader = new FileReader()
+    reader.onloadend = () => {
+      setPhotoPreview(reader.result)
+    }
+    reader.readAsDataURL(file)
+  }
+}
 
   // Function to handle input changes
   const handleChange = (e) => {
@@ -100,6 +118,45 @@ export default function Register() {
               required
             />
           </div>
+
+          {/* Photo Upload */}
+    <div>
+    <label className="block text-sm font-medium text-gray-700 mb-2">
+        Student Photo
+    </label>
+    <div className="flex items-center space-x-4">
+    {/* Preview */}
+    <div className="flex-shrink-0">
+      {photoPreview ? (
+        <img 
+          src={photoPreview} 
+          alt="Preview" 
+          className="w-20 h-20 rounded-full object-cover border-2 border-gray-300"
+        />
+      ) : (
+        <div className="w-20 h-20 rounded-lg bg-gray-200 flex items-center justify-center border-2 border-gray-300">
+          <span className="text-gray-400 text-2xl">📷</span>
+        </div>
+      )}
+    </div>
+    
+    {/* Upload Button */}
+    <label className="flex-1 cursor-pointer">
+      <div className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-all text-center border border-gray-300">
+        Choose Photo
+      </div>
+      <input
+        type="file"
+        accept="image/*"
+        onChange={handlePhotoChange}
+        className="hidden"
+      />
+       </label>
+    </div>
+    <p className="text-xs text-gray-500 mt-1">
+        Recommended: Square photo, clear face
+    </p>
+    </div>
 
         {/* Phone Number */}
         <div>
