@@ -49,7 +49,7 @@ export default function Register() {
 }
 
  return (
-  <div className="min-h-screen bg-gradient-to-br from-blue-600 to-purple-700 flex items-center justify-center p-4">
+  <div className="min-h-screen bg-gradient-to-br from-gray-600 to-black-700 flex items-center justify-center p-4">
     {!isSubmitted ? (
       // FORM SCREEN - Complete Version
       <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full">
@@ -61,7 +61,7 @@ export default function Register() {
           {/* Full Name */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Full Name
+              First Name
             </label>
             <input
               type="text"
@@ -69,10 +69,26 @@ export default function Register() {
               value={formData.fullName}
               onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-400"
-              placeholder="John Doe"
+              placeholder="John"
               required
             />
           </div>
+
+          {/*Last Name */}
+            <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+                Last Name
+            </label>
+            <input
+                type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-400"
+                placeholder="Doe"
+                required
+            />
+            </div>
 
           {/* Student ID */}
           <div>
@@ -155,7 +171,7 @@ export default function Register() {
               defaultCountry="RW"
               value={formData.phone}
               onChange={(value) => setFormData(prev => ({ ...prev, phone: value }))}
-              className="phone-input-custom"
+              className="phone-input-custom w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-400"
             />
           </div>
 
@@ -171,19 +187,17 @@ export default function Register() {
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
               required
             >
-              <option value="">Select Department</option>
-              <option value="Computer Science">Computer Science</option>
-              <option value="Engineering">Engineering</option>
-              <option value="Business">Business</option>
-              <option value="Medicine">Medicine</option>
-              <option value="Arts">Arts</option>
+              <option value="">Course</option>
+              <option value="Bachelor of Software Engineering">Bachelor of Software Engineering</option>
+              <option value="Bachelor of Enterpreneural Leadership">Bachelor of Enterpreneural Leadership</option>
+              <option value="Bachelor of International Trade">Bachelor of International Trade</option>
             </select>
           </div>
 
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-all font-semibold mt-6"
+            className="w-full bg-gray-600 text-white py-3 rounded-lg hover:bg-gray-700 transition-all font-semibold mt-6"
           >
             Generate Digital ID
           </button>
